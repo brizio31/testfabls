@@ -15,7 +15,6 @@ steps:
     '--service-account=test-cicd-huware1@appspot.gserviceaccount.com',
     '--region=europe-west1',
     '--memory=128',
-    '--entry-point=hello_world',
     '--runtime=python37']
   dir: 'hello_world'
   waitFor: ['clone bitbucket repo']
