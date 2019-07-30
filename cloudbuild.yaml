@@ -2,7 +2,7 @@ steps:
 
 # 1. Fetch the source code
 - name: gcr.io/cloud-builders/git
-  args: ['clone', 'https://source.cloud.google.com/test-cicd-huware1/github_brizio31_testfabls']
+  args: ['clone', 'https://source.developers.google.com/p/test-cicd-huware1/r/github_brizio31_testfabls']
   id: clone bitbucket repo
 
   # 3. Deploy the Cloud Function that sends slack message
