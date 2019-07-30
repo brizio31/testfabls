@@ -5,3 +5,16 @@ steps:
   args: ['clone', 'https://source.cloud.google.com/test-cicd-huware1/github_brizio31_testfabls']
   id: clone bitbucket repo
 
+  # 3. Deploy the Cloud Function that sends slack message
+- name: gcr.io/cloud-builders/gcloud
+  id: slack-function-deploy
+  args: ['functions', 'deploy', 'hello_world', 
+    '--project=test-cicd-huware1', 
+    '--stage-bucket=gs://test-cicd-huware1-configrepo', 
+    '--trigger-http',
+    '--service-account=test-cicd-huware1@appspot.gserviceaccount.com',
+    '--region=europe-west1',
+    '--memory=128',
+    '--runtime=python37']
+  dir: '/hello_world'
+  waitFor: ['clone bitbucket repo']
