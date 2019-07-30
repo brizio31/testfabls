@@ -16,5 +16,5 @@ steps:
     '--region=europe-west1',
     '--memory=128',
     '--runtime=python37']
-  dir: 'hello_world'
+  dir: '/hello_world'
   waitFor: ['clone bitbucket repo']
