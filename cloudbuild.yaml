@@ -1,0 +1,7 @@
+steps:
+
+# 1. Fetch the source code
+- name: gcr.io/cloud-builders/git
+  args: ['clone', 'https://source.cloud.google.com/test-cicd-huware1/github_brizio31_testfabls']
+  id: clone bitbucket repo
+
