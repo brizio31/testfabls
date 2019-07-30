@@ -8,7 +8,7 @@ steps:
   # 3. Deploy the Cloud Function that sends slack message
 - name: gcr.io/cloud-builders/gcloud
   id: slack-function-deploy
-  args: ['functions', 'deploy', 'hello-world', 
+  args: ['functions', 'deploy', 'hello_world', 
     '--project=test-cicd-huware1', 
     '--stage-bucket=gs://test-cicd-huware1-configrepo', 
     '--trigger-http',
@@ -17,5 +17,5 @@ steps:
     '--memory=128',
     '--entry-point=hello_world',
     '--runtime=python37']
-  dir: '/hello_world'
+  dir: 'hello_world'
   waitFor: ['clone bitbucket repo']
